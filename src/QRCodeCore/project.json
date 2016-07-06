@@ -1,0 +1,28 @@
+﻿{
+  "version": "1.0.0-*",
+  "title": "QRCodeCore",
+  "description": "A cross-platform .NET library to create QR Codes",
+  "copyright": "Copyright 2016 Dirk Lemstra",
+  "authors": [
+    "Dirk Lemstra"
+  ],
+  "packOptions": {
+    "projectUrl": "https://github.com/dlemstra/QRCodeCore",
+    "licenseUrl": "https://github.com/dlemstra/QRCodeCore/blob/master/License.txt",
+    "summary": "A cross-platform .NET library to create QR Codes",
+    "owners": [
+      "Dirk Lemstra"
+    ],
+    "tags": [
+      "qr qr-code"
+    ]
+  },
+  "frameworks": {
+    "net45": {},
+    "netstandard1.3": {
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  }
+}
