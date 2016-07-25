@@ -1,0 +1,18 @@
+os: Visual Studio 2015
+
+configuration: Release
+
+before_build:
+- dotnet restore src\QRCodeCore\project.json
+
+build:
+  project: QRCodeCore.sln
+  parallel: true
+
+after_build:
+- dotnet pack --output %appveyor_build_folder%\publish --no-build --configuration Release src\QRCodeCore\project.json
+
+test: off
+
+artifacts:
+- path: publish\*.nupkg
