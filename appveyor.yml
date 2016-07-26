@@ -4,6 +4,7 @@ configuration: Release
 
 before_build:
 - dotnet restore src\QRCodeCore\project.json
+- dotnet restore tests\QRCodeCore.Tests\project.json
 
 build:
   project: QRCodeCore.sln
