@@ -27,7 +27,7 @@
     "net45":
     {
     },
-    "netstandard1.3":
+    "netstandard1.2":
     {
       "dependencies":
       {

@@ -320,7 +320,8 @@ namespace QRCodeCore
         var size = qrCode.ModuleMatrix.Count;
         var up = true;
         var datawords = new Queue<bool>();
-        data.ToList().ForEach(x => datawords.Enqueue(x != '0'));
+        foreach (char c in data)
+          datawords.Enqueue(c != '0');
         for (var x = size - 1; x >= 0; x = x - 2)
         {
           if (x == 6)
@@ -832,8 +833,8 @@ namespace QRCodeCore
     private bool IsValidISO(string input)
     {
       var bytes = Encoding.GetEncoding("ISO-8859-1").GetBytes(input);
-      var result = Encoding.GetEncoding("ISO-8859-1").GetString(bytes);
-      return String.Equals(input, result);
+      var result = Encoding.GetEncoding("ISO-8859-1").GetString(bytes, 0, bytes.Length);
+      return string.Equals(input, result);
     }
 
     private string PlainTextToBinary(string plainText, EncodingMode encMode, bool utf8BOM)
@@ -1003,7 +1004,8 @@ namespace QRCodeCore
     private void CreateAlphanumEncDict()
     {
       this.alphanumEncDict = new Dictionary<char, int>();
-      this.alphanumEncTable.ToList().Select((x, i) => new { Chr = x, Index = i }).ToList().ForEach(x => this.alphanumEncDict.Add(x.Chr, x.Index));
+      for (int i = 0; i < this.alphanumEncTable.Length; i++)
+        this.alphanumEncDict.Add(this.alphanumEncTable[i], i);
     }
 
     private void CreateAlignmentPatternTable()
@@ -1284,7 +1286,8 @@ namespace QRCodeCore
       public override string ToString()
       {
         var sb = new StringBuilder();
-        this.PolyItems.ForEach(x => sb.Append("a^" + x.Coefficient + "*x^" + x.Exponent + " + "));
+        foreach (PolynomItem item in this.PolyItems)
+          sb.Append("a^" + item.Coefficient + "*x^" + item.Exponent + " + ");
 
         return sb.ToString().TrimEnd(new[] { ' ', '+' });
       }
