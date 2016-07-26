@@ -867,8 +867,9 @@ namespace QRCodeCore.Tests
 <rect x=""112"" y=""104"" width=""4"" height=""4"" fill=""#fff"" />
 <rect x=""112"" y=""108"" width=""4"" height=""4"" fill=""#fff"" />
 <rect x=""112"" y=""112"" width=""4"" height=""4"" fill=""#fff"" />
-</svg>";
+</svg>".Replace("\r", "").Replace("\n", "");
 
+      actual = actual.Replace("\r", "").Replace("\n", "");
       Assert.Equal(excepted, actual);
     }
   }
