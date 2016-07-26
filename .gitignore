@@ -1,5 +1,9 @@
-*.user
-project.lock.json
 .vs
+
 bin
 obj
+
+*.user
+project.lock.json
+
+/publish/ApiKey.txt
