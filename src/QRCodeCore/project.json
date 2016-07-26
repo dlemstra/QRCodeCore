@@ -11,6 +11,7 @@
   {
     "projectUrl": "https://github.com/dlemstra/QRCodeCore",
     "licenseUrl": "https://github.com/dlemstra/QRCodeCore/blob/master/License.txt",
+    "iconUrl": "https://raw.githubusercontent.com/dlemstra/QRCodeCore/master/logo/QRCodeCore.png",
     "summary": "A cross-platform .NET library to create QR Codes",
     "owners":
     [
