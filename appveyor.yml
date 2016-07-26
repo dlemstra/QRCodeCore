@@ -11,6 +11,7 @@ build:
   parallel: true
 
 after_build:
+- dotnet test tests\QRCodeCore.Tests\project.json
 - dotnet pack --output %appveyor_build_folder%\publish --no-build --configuration Release src\QRCodeCore\project.json
 
 test: off
