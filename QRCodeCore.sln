@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "QRCodeCore", "src\QRCodeCore\QRCodeCore.xproj", "{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{53853207-F231-4F1B-B182-03A172C75769}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "QRCodeCore.Tests", "tests\QRCodeCore.Tests\QRCodeCore.Tests.xproj", "{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,11 +27,16 @@ Global
 		{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E} = {270ECEAD-9195-4B65-9E6D-E80F92AA2F2F}
+		{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25} = {53853207-F231-4F1B-B182-03A172C75769}
 	EndGlobalSection
 EndGlobal
