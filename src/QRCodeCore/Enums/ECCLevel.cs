@@ -14,11 +14,11 @@
 
 namespace QRCodeCore
 {
-    public enum ECCLevel
-    {
-        L,
-        M,
-        Q,
-        H
-    }
+  public enum ECCLevel
+  {
+    L,
+    M,
+    Q,
+    H
+  }
 }

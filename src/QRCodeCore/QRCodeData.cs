@@ -1,5 +1,4 @@
-﻿
-//=================================================================================================
+﻿//=================================================================================================
 // Copyright 2016 Dirk Lemstra <https://github.com/dlemstra/QRCodeCore>
 //
 // Licensed under the Apache 2.0 License (the "License"); you may not use this file except in 
@@ -15,24 +14,24 @@
 
 namespace QRCodeCore
 {
-    public sealed class QRCodeData
+  public sealed class QRCodeData
+  {
+    public QRCodeData(string text)
     {
-        public QRCodeData(string text)
-        {
-            Text = text;
-            ECCLevel = ECCLevel.Q;
-        }
-
-        public ECCLevel ECCLevel
-        {
-            get;
-            set;
-        }
-
-        internal string Text
-        {
-            get;
-            private set;
-        }
+      Text = text;
+      ECCLevel = ECCLevel.Q;
     }
+
+    public ECCLevel ECCLevel
+    {
+      get;
+      set;
+    }
+
+    internal string Text
+    {
+      get;
+      private set;
+    }
+  }
 }

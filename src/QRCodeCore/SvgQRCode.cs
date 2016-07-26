@@ -17,49 +17,49 @@ using System.Text;
 
 namespace QRCodeCore
 {
-    public sealed class SvgQRCode
+  public sealed class SvgQRCode
+  {
+    private QRCodeData _Data;
+
+    public SvgQRCode(QRCodeData data)
     {
-        private QRCodeData _Data;
-
-        public SvgQRCode(QRCodeData data)
-        {
-            _Data = data;
-        }
-
-        public string Create(int size)
-        {
-            QRCodeGenerator generator = new QRCodeGenerator();
-            QRCodeMatrix matrix = generator.CreateQrCode(_Data.Text, _Data.ECCLevel);
-
-            var svgFile = new StringBuilder(@"<svg version=""1.1"" baseProfile=""full"" width=""");
-            svgFile.Append(size);
-            svgFile.Append(@""" height=""");
-            svgFile.Append(size);
-            svgFile.Append(@""" xmlns=""http://www.w3.org/2000/svg"">");
-
-            var unitsPerModule = (int)Math.Floor(size / (double)matrix.ModuleMatrix.Count);
-            var modeleSize = matrix.ModuleMatrix.Count * unitsPerModule;
-            for (var x = 0; x < modeleSize; x += unitsPerModule)
-            {
-                for (var y = 0; y < modeleSize; y += unitsPerModule)
-                {
-                    var module = matrix.GetValue((y + unitsPerModule) / unitsPerModule - 1, (x + unitsPerModule) / unitsPerModule - 1);
-                    svgFile.Append(@"<rect x=""");
-                    svgFile.Append(x);
-                    svgFile.Append(@""" y=""");
-                    svgFile.Append(y);
-                    svgFile.Append(@""" width=""");
-                    svgFile.Append(unitsPerModule);
-                    svgFile.Append(@""" height=""");
-                    svgFile.Append(unitsPerModule);
-                    svgFile.Append(@""" fill=""");
-                    svgFile.Append(module ? "#000" : "#fff");
-                    svgFile.AppendLine(@""" />");
-                }
-            }
-
-            svgFile.Append(@"</svg>");
-            return svgFile.ToString();
-        }
+      _Data = data;
     }
+
+    public string Create(int size)
+    {
+      QRCodeGenerator generator = new QRCodeGenerator();
+      QRCodeMatrix matrix = generator.CreateQrCode(_Data.Text, _Data.ECCLevel);
+
+      var svgFile = new StringBuilder(@"<svg version=""1.1"" baseProfile=""full"" width=""");
+      svgFile.Append(size);
+      svgFile.Append(@""" height=""");
+      svgFile.Append(size);
+      svgFile.Append(@""" xmlns=""http://www.w3.org/2000/svg"">");
+
+      var unitsPerModule = (int)Math.Floor(size / (double)matrix.ModuleMatrix.Count);
+      var modeleSize = matrix.ModuleMatrix.Count * unitsPerModule;
+      for (var x = 0; x < modeleSize; x += unitsPerModule)
+      {
+        for (var y = 0; y < modeleSize; y += unitsPerModule)
+        {
+          var module = matrix.GetValue((y + unitsPerModule) / unitsPerModule - 1, (x + unitsPerModule) / unitsPerModule - 1);
+          svgFile.Append(@"<rect x=""");
+          svgFile.Append(x);
+          svgFile.Append(@""" y=""");
+          svgFile.Append(y);
+          svgFile.Append(@""" width=""");
+          svgFile.Append(unitsPerModule);
+          svgFile.Append(@""" height=""");
+          svgFile.Append(unitsPerModule);
+          svgFile.Append(@""" fill=""");
+          svgFile.Append(module ? "#000" : "#fff");
+          svgFile.AppendLine(@""" />");
+        }
+      }
+
+      svgFile.Append(@"</svg>");
+      return svgFile.ToString();
+    }
+  }
 }
