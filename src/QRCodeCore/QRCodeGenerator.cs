@@ -224,14 +224,14 @@ namespace QRCodeCore
       public static void PlaceVersion(ref QRCodeMatrix qrCode, string versionStr)
       {
         var size = qrCode.ModuleMatrix.Count;
-        var vStr = new string(versionStr.Reverse().ToArray());
 
         for (var x = 0; x < 6; x++)
         {
           for (var y = 0; y < 3; y++)
           {
-            qrCode.ModuleMatrix[y + size - 11][x] = vStr[x * 3 + y] == '1';
-            qrCode.ModuleMatrix[x][y + size - 11] = vStr[x * 3 + y] == '1';
+            var value = versionStr[(5 - x) * 3 + (2 - y)] == '1';
+            qrCode.ModuleMatrix[y + size - 11][x] = value;
+            qrCode.ModuleMatrix[x][y + size - 11] = value;
           }
         }
       }
@@ -239,14 +239,14 @@ namespace QRCodeCore
       public static void PlaceFormat(ref QRCodeMatrix qrCode, string formatStr)
       {
         var size = qrCode.ModuleMatrix.Count;
-        var fStr = new string(formatStr.Reverse().ToArray());
         var modules = new[,] { { 8, 0, size - 1, 8 }, { 8, 1, size - 2, 8 }, { 8, 2, size - 3, 8 }, { 8, 3, size - 4, 8 }, { 8, 4, size - 5, 8 }, { 8, 5, size - 6, 8 }, { 8, 7, size - 7, 8 }, { 8, 8, size - 8, 8 }, { 7, 8, 8, size - 7 }, { 5, 8, 8, size - 6 }, { 4, 8, 8, size - 5 }, { 3, 8, 8, size - 4 }, { 2, 8, 8, size - 3 }, { 1, 8, 8, size - 2 }, { 0, 8, 8, size - 1 } };
         for (var i = 0; i < 15; i++)
         {
           var p1 = new Point(modules[i, 0], modules[i, 1]);
           var p2 = new Point(modules[i, 2], modules[i, 3]);
-          qrCode.ModuleMatrix[p1.Y][p1.X] = fStr[i] == '1';
-          qrCode.ModuleMatrix[p2.Y][p2.X] = fStr[i] == '1';
+          var value = formatStr[14 - i] == '1';
+          qrCode.ModuleMatrix[p1.Y][p1.X] = value;
+          qrCode.ModuleMatrix[p2.Y][p2.X] = value;
         }
       }
 
@@ -715,12 +715,21 @@ namespace QRCodeCore
 
     private EncodingMode GetEncodingFromPlaintext(string plainText)
     {
-      if (plainText.All(c => "0123456789".Contains(c)))
-        return EncodingMode.Numeric;
-      else if (plainText.All(c => this.alphanumEncTable.Contains(c)))
-        return EncodingMode.Alphanumeric;
-      else
-        return EncodingMode.Byte;
+      char[] numeric = "0123456789".ToCharArray();
+      EncodingMode result = EncodingMode.Numeric;
+
+      foreach (char c in plainText)
+      {
+        if (numeric.Contains(c))
+          continue;
+
+        result = EncodingMode.Alphanumeric;
+
+        if (!alphanumEncTable.Contains(c))
+          return EncodingMode.Byte;
+      }
+
+      return result;
     }
 
     private Polynom CalculateMessagePolynom(string bitString)
@@ -758,7 +767,7 @@ namespace QRCodeCore
 
     private List<string> BinaryStringToBitBlockList(string bitString)
     {
-      return bitString.ToList().Select((x, i) => new { Index = i, Value = x })
+      return bitString.ToCharArray().Select((x, i) => new { Index = i, Value = x })
           .GroupBy(x => x.Index / 8)
           .Select(x => String.Join("", x.Select(v => v.Value.ToString()).ToArray()))
           .ToList();
