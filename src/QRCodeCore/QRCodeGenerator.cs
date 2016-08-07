@@ -257,7 +257,7 @@ namespace QRCodeCore
 
         var size = qrCode.ModuleMatrix.Count;
 
-        foreach (var pattern in typeof(MaskPattern).GetTypeInfo().DeclaredMethods)
+        foreach (var pattern in typeof(MaskPattern).DeclaredMethods())
         {
           if (pattern.Name.Length == 8 && pattern.Name.Substring(0, 7) == "Pattern")
           {
@@ -300,7 +300,7 @@ namespace QRCodeCore
           }
         }
 
-        var patterMethod = typeof(MaskPattern).GetTypeInfo().DeclaredMethods.First(x => x.Name == patternName);
+        var patterMethod = typeof(MaskPattern).DeclaredMethods().First(x => x.Name == patternName);
         for (var x = 0; x < size; x++)
         {
           for (var y = 0; y < size; y++)
