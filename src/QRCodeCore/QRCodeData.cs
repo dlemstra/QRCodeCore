@@ -19,10 +19,10 @@ namespace QRCodeCore
     public QRCodeData(string text)
     {
       Text = text;
-      ECCLevel = ECCLevel.Q;
+      EccLevel = EccLevel.Q;
     }
 
-    public ECCLevel ECCLevel
+    public EccLevel EccLevel
     {
       get;
       set;

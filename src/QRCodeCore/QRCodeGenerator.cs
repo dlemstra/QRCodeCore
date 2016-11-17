@@ -45,7 +45,7 @@ namespace QRCodeCore
       this.CreateAlignmentPatternTable();
     }
 
-    public QRCodeMatrix CreateQrCode(string plainText, ECCLevel eccLevel, bool utf8BOM = false)
+    public QRCodeMatrix CreateQRCode(string plainText, EccLevel eccLevel, bool utf8BOM = false)
     {
       var encoding = this.GetEncodingFromPlaintext(plainText);
       var codedText = this.PlainTextToBinary(plainText, encoding, utf8BOM);
@@ -155,12 +155,12 @@ namespace QRCodeCore
       return qr;
     }
 
-    private static string GetFormatString(ECCLevel level, int maskVersion)
+    private static string GetFormatString(EccLevel level, int maskVersion)
     {
       var generator = "10100110111";
       var fStrMask = "101010000010010";
 
-      var fStr = (level == ECCLevel.L) ? "01" : (level == ECCLevel.M) ? "00" : (level == ECCLevel.Q) ? "11" : "10";
+      var fStr = (level == EccLevel.L) ? "01" : (level == EccLevel.M) ? "00" : (level == EccLevel.Q) ? "11" : "10";
       fStr += DecToBin(maskVersion, 3);
       var fStrEcc = fStr.PadRight(15, '0').TrimStart('0');
       while (fStrEcc.Length > 10)
@@ -250,7 +250,7 @@ namespace QRCodeCore
         }
       }
 
-      public static int MaskCode(ref QRCodeMatrix qrCode, int version, ref List<Rectangle> blockedModules, ECCLevel eccLevel)
+      public static int MaskCode(ref QRCodeMatrix qrCode, int version, ref List<Rectangle> blockedModules, EccLevel eccLevel)
       {
         var patternName = string.Empty;
         var patternScore = 0;
@@ -697,7 +697,7 @@ namespace QRCodeCore
       return newPoly;
     }
 
-    private int GetVersion(int length, EncodingMode encMode, ECCLevel eccLevel)
+    private int GetVersion(int length, EncodingMode encMode, EccLevel eccLevel)
     {
       var version = this.capacityTable.Where(
           x => x.Details.Count(
@@ -1060,7 +1060,7 @@ namespace QRCodeCore
         {
                     new ECCInfo(
                         (i+24) / 24,
-                        ECCLevel.L,
+                        EccLevel.L,
                         this.capacityECCBaseValues[i],
                         this.capacityECCBaseValues[i+1],
                         this.capacityECCBaseValues[i+2],
@@ -1070,7 +1070,7 @@ namespace QRCodeCore
                     new ECCInfo
                     (
                         version: (i + 24) / 24,
-                        errorCorrectionLevel: ECCLevel.M,
+                        errorCorrectionLevel: EccLevel.M,
                         totalDataCodewords: this.capacityECCBaseValues[i+6],
                         eccPerBlock: this.capacityECCBaseValues[i+7],
                         blocksInGroup1: this.capacityECCBaseValues[i+8],
@@ -1081,7 +1081,7 @@ namespace QRCodeCore
                     new ECCInfo
                     (
                         version: (i + 24) / 24,
-                        errorCorrectionLevel: ECCLevel.Q,
+                        errorCorrectionLevel: EccLevel.Q,
                         totalDataCodewords: this.capacityECCBaseValues[i+12],
                         eccPerBlock: this.capacityECCBaseValues[i+13],
                         blocksInGroup1: this.capacityECCBaseValues[i+14],
@@ -1092,7 +1092,7 @@ namespace QRCodeCore
                     new ECCInfo
                     (
                         version: (i + 24) / 24,
-                        errorCorrectionLevel: ECCLevel.H,
+                        errorCorrectionLevel: EccLevel.H,
                         totalDataCodewords: this.capacityECCBaseValues[i+18],
                         eccPerBlock: this.capacityECCBaseValues[i+19],
                         blocksInGroup1: this.capacityECCBaseValues[i+20],
@@ -1115,7 +1115,7 @@ namespace QRCodeCore
             new List<VersionInfoDetails>
             {
                         new VersionInfoDetails(
-                             ECCLevel.L,
+                             EccLevel.L,
                              new Dictionary<EncodingMode,int>(){
                                  { EncodingMode.Numeric, this.capacityBaseValues[i] },
                                  { EncodingMode.Alphanumeric, this.capacityBaseValues[i+1] },
@@ -1124,7 +1124,7 @@ namespace QRCodeCore
                             }
                         ),
                         new VersionInfoDetails(
-                             ECCLevel.M,
+                             EccLevel.M,
                              new Dictionary<EncodingMode,int>(){
                                  { EncodingMode.Numeric, this.capacityBaseValues[i+4] },
                                  { EncodingMode.Alphanumeric, this.capacityBaseValues[i+5] },
@@ -1133,7 +1133,7 @@ namespace QRCodeCore
                              }
                         ),
                         new VersionInfoDetails(
-                             ECCLevel.Q,
+                             EccLevel.Q,
                              new Dictionary<EncodingMode,int>(){
                                  { EncodingMode.Numeric, this.capacityBaseValues[i+8] },
                                  { EncodingMode.Alphanumeric, this.capacityBaseValues[i+9] },
@@ -1142,7 +1142,7 @@ namespace QRCodeCore
                              }
                         ),
                         new VersionInfoDetails(
-                             ECCLevel.H,
+                             EccLevel.H,
                              new Dictionary<EncodingMode,int>(){
                                  { EncodingMode.Numeric, this.capacityBaseValues[i+12] },
                                  { EncodingMode.Alphanumeric, this.capacityBaseValues[i+13] },
@@ -1215,7 +1215,7 @@ namespace QRCodeCore
 
     private struct ECCInfo
     {
-      public ECCInfo(int version, ECCLevel errorCorrectionLevel, int totalDataCodewords, int eccPerBlock, int blocksInGroup1,
+      public ECCInfo(int version, EccLevel errorCorrectionLevel, int totalDataCodewords, int eccPerBlock, int blocksInGroup1,
           int codewordsInGroup1, int blocksInGroup2, int codewordsInGroup2)
       {
         this.Version = version;
@@ -1228,7 +1228,7 @@ namespace QRCodeCore
         this.CodewordsInGroup2 = codewordsInGroup2;
       }
       public int Version { get; }
-      public ECCLevel ErrorCorrectionLevel { get; }
+      public EccLevel ErrorCorrectionLevel { get; }
       public int TotalDataCodewords { get; }
       public int ECCPerBlock { get; }
       public int BlocksInGroup1 { get; }
@@ -1250,13 +1250,13 @@ namespace QRCodeCore
 
     private struct VersionInfoDetails
     {
-      public VersionInfoDetails(ECCLevel errorCorrectionLevel, Dictionary<EncodingMode, int> capacityDict)
+      public VersionInfoDetails(EccLevel errorCorrectionLevel, Dictionary<EncodingMode, int> capacityDict)
       {
         this.ErrorCorrectionLevel = errorCorrectionLevel;
         this.CapacityDict = capacityDict;
       }
 
-      public ECCLevel ErrorCorrectionLevel { get; }
+      public EccLevel ErrorCorrectionLevel { get; }
       public Dictionary<EncodingMode, int> CapacityDict { get; }
     }
 

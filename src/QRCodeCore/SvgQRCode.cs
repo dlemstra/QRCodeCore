@@ -29,7 +29,7 @@ namespace QRCodeCore
     public string Create(int size)
     {
       QRCodeGenerator generator = new QRCodeGenerator();
-      QRCodeMatrix matrix = generator.CreateQrCode(_Data.Text, _Data.ECCLevel);
+      QRCodeMatrix matrix = generator.CreateQRCode(_Data.Text, _Data.EccLevel);
 
       var svgFile = new StringBuilder(@"<svg version=""1.1"" baseProfile=""full"" width=""");
       svgFile.Append(size);

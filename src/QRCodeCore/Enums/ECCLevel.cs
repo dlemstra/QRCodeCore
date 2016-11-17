@@ -14,7 +14,7 @@
 
 namespace QRCodeCore
 {
-  public enum ECCLevel
+  public enum EccLevel
   {
     L,
     M,
