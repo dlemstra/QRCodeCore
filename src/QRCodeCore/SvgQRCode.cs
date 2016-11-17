@@ -34,7 +34,7 @@ namespace QRCodeCore
       var unitsPerModule = (int)Math.Floor(size / (double)matrix.ModuleMatrix.Count);
       var viewBoxSize = matrix.ModuleMatrix.Count * unitsPerModule;
 
-      var svgFile = new StringBuilder(@"<svg version=""1.1"" style=""background: red"" baseProfile=""full"" width=""");
+      var svgFile = new StringBuilder(@"<svg version=""1.1"" baseProfile=""full"" width=""");
       svgFile.Append(viewBoxSize);
       svgFile.Append(@""" height=""");
       svgFile.Append(viewBoxSize);

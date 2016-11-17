@@ -26,7 +26,7 @@ namespace QRCodeCore.Tests
       SvgQRCode qrCode = new SvgQRCode(data);
       string actual = qrCode.Create(128);
 
-      string excepted = @"<svg version=""1.1"" baseProfile=""full"" width=""128"" height=""128"" xmlns=""http://www.w3.org/2000/svg""><rect x=""0"" y=""0"" width=""4"" height=""4"" fill=""#fff"" />
+      string excepted = @"<svg version=""1.1"" baseProfile=""full"" width=""116"" height=""116"" xmlns=""http://www.w3.org/2000/svg""><rect x=""0"" y=""0"" width=""4"" height=""4"" fill=""#fff"" />
 <rect x=""0"" y=""4"" width=""4"" height=""4"" fill=""#fff"" />
 <rect x=""0"" y=""8"" width=""4"" height=""4"" fill=""#fff"" />
 <rect x=""0"" y=""12"" width=""4"" height=""4"" fill=""#fff"" />
