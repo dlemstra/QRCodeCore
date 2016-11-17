@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
-using System.Reflection;
 
 namespace QRCodeCore
 {
@@ -659,11 +658,12 @@ namespace QRCodeCore
             generatorPolynom.PolyItems[i].Exponent + (messagePolynom.PolyItems.Count - 1));
 
       var leadTermSource = messagePolynom;
-      for (var i = 0; i < messagePolynom.PolyItems.Count || (leadTermSource.PolyItems.Count > 0 && leadTermSource.PolyItems[leadTermSource.PolyItems.Count - 1].Exponent > 0); i++)
+      for (var i = 0; (leadTermSource.PolyItems.Count > 0 && leadTermSource.PolyItems[leadTermSource.PolyItems.Count - 1].Exponent > 0); i++)
       {
         if (leadTermSource.PolyItems[0].Coefficient == 0)
         {
           leadTermSource.PolyItems.RemoveAt(0);
+          leadTermSource.PolyItems.Add(new PolynomItem(0, leadTermSource.PolyItems[leadTermSource.PolyItems.Count - 1].Exponent - 1));
         }
         else
         {
