@@ -31,17 +31,18 @@ namespace QRCodeCore
       QRCodeGenerator generator = new QRCodeGenerator();
       QRCodeMatrix matrix = generator.CreateQRCode(_Data.Text, _Data.EccLevel);
 
-      var svgFile = new StringBuilder(@"<svg version=""1.1"" baseProfile=""full"" width=""");
-      svgFile.Append(size);
+      var unitsPerModule = (int)Math.Floor(size / (double)matrix.ModuleMatrix.Count);
+      var viewBoxSize = matrix.ModuleMatrix.Count * unitsPerModule;
+
+      var svgFile = new StringBuilder(@"<svg version=""1.1"" style=""background: red"" baseProfile=""full"" width=""");
+      svgFile.Append(viewBoxSize);
       svgFile.Append(@""" height=""");
-      svgFile.Append(size);
+      svgFile.Append(viewBoxSize);
       svgFile.Append(@""" xmlns=""http://www.w3.org/2000/svg"">");
 
-      var unitsPerModule = (int)Math.Floor(size / (double)matrix.ModuleMatrix.Count);
-      var modeleSize = matrix.ModuleMatrix.Count * unitsPerModule;
-      for (var x = 0; x < modeleSize; x += unitsPerModule)
+      for (var x = 0; x < viewBoxSize; x += unitsPerModule)
       {
-        for (var y = 0; y < modeleSize; y += unitsPerModule)
+        for (var y = 0; y < viewBoxSize; y += unitsPerModule)
         {
           var module = matrix.GetValue((y + unitsPerModule) / unitsPerModule - 1, (x + unitsPerModule) / unitsPerModule - 1);
           svgFile.Append(@"<rect x=""");
