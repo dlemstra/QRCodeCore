@@ -3,18 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1AA9084D-7344-4EED-8951-56703874D0FA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{1AA9084D-7344-4EED-8951-56703874D0FA}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
 		build\build.cmd = build\build.cmd
 		build\packages.config = build\packages.config
-		Readme.md = Readme.md
 		build\test.cmd = build\test.cmd
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QRCodeCore", "src\QRCodeCore\QRCodeCore.csproj", "{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QRCodeCore.Tests", "tests\QRCodeCore.Tests\QRCodeCore.Tests.csproj", "{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{F16B0BD4-BCF7-40DD-BEED-A29F6961D804}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publish", "Publish", "{6E408898-DB1D-4105-B66F-97A1F41087F4}"
+	ProjectSection(SolutionItems) = preProject
+		publish\Publish.cmd = publish\Publish.cmd
+		publish\Push.cmd = publish\Push.cmd
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
