@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <DebugType Condition="$(codecov) != ''">full</DebugType>
+    <DebugType Condition="$(codecov) == ''">portable</DebugType>
     <AssemblyName>QRCodeCore.Tests</AssemblyName>
     <PackageId>QRCodeCore.Tests</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>

@@ -1,11 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <TargetFrameworks>net35;netstandard1.1</TargetFrameworks>
+    <DebugType Condition="$(codecov) != ''">full</DebugType>
+    <DebugType Condition="$(codecov) == ''">portable</DebugType>
     <Description>A cross-platform .NET library to create QR Codes</Description>
     <Copyright>Copyright 2016 Dirk Lemstra</Copyright>
     <AssemblyTitle>QRCodeCore</AssemblyTitle>
     <Authors>Dirk Lemstra</Authors>
-    <TargetFrameworks>net35;netstandard1.1</TargetFrameworks>
     <AssemblyName>QRCodeCore</AssemblyName>
     <PackageId>QRCodeCore</PackageId>
     <PackageTags>qr qr-code</PackageTags>

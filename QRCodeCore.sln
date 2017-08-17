@@ -3,15 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{270ECEAD-9195-4B65-9E6D-E80F92AA2F2F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1AA9084D-7344-4EED-8951-56703874D0FA}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		build\build.cmd = build\build.cmd
+		build\packages.config = build\packages.config
 		Readme.md = Readme.md
+		build\test.cmd = build\test.cmd
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{53853207-F231-4F1B-B182-03A172C75769}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QRCodeCore", "src\QRCodeCore\QRCodeCore.csproj", "{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E}"
 EndProject
@@ -34,9 +33,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E} = {270ECEAD-9195-4B65-9E6D-E80F92AA2F2F}
-		{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25} = {53853207-F231-4F1B-B182-03A172C75769}
 	EndGlobalSection
 EndGlobal

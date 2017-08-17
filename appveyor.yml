@@ -1,20 +1,8 @@
-os: Visual Studio 2015
+version: QRCodeCore-{build}
+image: Visual Studio 2017
 
-configuration: Release
+build_script:
+- cmd: build\build.cmd
 
-before_build:
-- dotnet restore src\QRCodeCore\QRCodeCore.csproj
-- dotnet restore tests\QRCodeCore.Tests\QRCodeCore.Tests.csproj
-
-build:
-  project: QRCodeCore.sln
-  parallel: true
-
-after_build:
-- dotnet test tests\QRCodeCore.Tests\QRCodeCore.Tests.csproj
-- dotnet pack --output %appveyor_build_folder%\publish --no-build --configuration Release src\QRCodeCore\QRCodeCore.csproj
-
-test: off
-
-artifacts:
-- path: publish\*.nupkg
+test_script:
+- cmd: build\test.cmd
