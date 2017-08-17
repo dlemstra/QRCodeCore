@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>A cross-platform .NET library to create QR Codes</Description>
+    <Copyright>Copyright 2016 Dirk Lemstra</Copyright>
+    <AssemblyTitle>QRCodeCore</AssemblyTitle>
+    <Authors>Dirk Lemstra</Authors>
+    <TargetFrameworks>net35;netstandard1.1</TargetFrameworks>
+    <AssemblyName>QRCodeCore</AssemblyName>
+    <PackageId>QRCodeCore</PackageId>
+    <PackageTags>qr qr-code</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/dlemstra/QRCodeCore/master/logo/QRCodeCore.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/dlemstra/QRCodeCore</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/dlemstra/QRCodeCore/blob/master/License.txt</PackageLicenseUrl>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.1' ">1.6.0</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
+    <Reference Include="System" />
+  </ItemGroup>
+
+</Project>
