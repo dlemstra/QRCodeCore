@@ -4,6 +4,7 @@
     <TargetFrameworks>net35;netstandard1.1</TargetFrameworks>
     <DebugType Condition="$(codecov) != ''">full</DebugType>
     <DebugType Condition="$(codecov) == ''">portable</DebugType>
+    <Version>1.0.0</Version>
     <Description>A cross-platform .NET library to create QR Codes</Description>
     <Copyright>Copyright 2016 Dirk Lemstra</Copyright>
     <AssemblyTitle>QRCodeCore</AssemblyTitle>
