@@ -1,8 +1,0 @@
-version: QRCodeCore-{build}
-image: Visual Studio 2017
-
-build_script:
-- cmd: build\build.cmd
-
-test_script:
-- cmd: build\test.cmd
