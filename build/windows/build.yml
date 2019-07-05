@@ -19,3 +19,9 @@ steps:
       cp *.nupkg $(Build.StagingDirectory)
     workingDirectory: $(Build.SourcesDirectory)/publish
   displayName: Create NuGet package
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: $(Build.StagingDirectory)
+    artifactName: windows
+  displayName: 'Publish Build Artifacts'
