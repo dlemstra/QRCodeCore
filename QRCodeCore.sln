@@ -9,7 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QRCodeCore.Tests", "tests\Q
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "publish", "publish", "{6E408898-DB1D-4105-B66F-97A1F41087F4}"
 	ProjectSection(SolutionItems) = preProject
-		publish\publish.yml = publish\publish.yml
 		publish\push.cmd = publish\push.cmd
 		publish\QRCodeCore.nuspec = publish\QRCodeCore.nuspec
 	EndProjectSection
