@@ -11,13 +11,3 @@ steps:
 - script: test.cmd
   workingDirectory: $(Build.SourcesDirectory)/build/windows
   displayName: Test QRCodeCore
-
-- script: copy.cmd "$(Build.StagingDirectory)"
-  workingDirectory: $(Build.SourcesDirectory)/build/windows
-  displayName: Copy QRCodeCore files
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathtoPublish: $(Build.StagingDirectory)
-    artifactName: windows
-  displayName: 'Publish Build Artifacts'
