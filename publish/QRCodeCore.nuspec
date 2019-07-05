@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.5">
+    <id>QRCodeCore</id>
+    <version>1.0.0</version>
+    <title>QRCodeCore</title>
+    <authors>Dirk Lemstra</authors>
+    <owners>Dirk Lemstra</owners>
+    <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/dlemstra/QRCodeCore</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/dlemstra/QRCodeCore/master/logo/QRCodeCore.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A cross-platform .NET library to create QR Codes</description>
+    <summary>QRCodeCore</summary>
+    <copyright>Copyright 2016-2019 Dirk Lemstra</copyright>
+    <tags>qr qr-code</tags>
+    <dependencies>
+      <group targetFramework="net35"/>
+      <group targetFramework=".NETStandard1.1"/>
+      <group targetFramework=".NETStandard2.0"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\QRCodeCore\bin\Release\net35\QRCodeCore.dll" target="lib\net35"/>
+    <file src="..\src\QRCodeCore\bin\Release\netstandard1.1\QRCodeCore.dll" target="lib\netstandard1.1"/>
+    <file src="..\src\QRCodeCore\bin\Release\netstandard2.0\QRCodeCore.dll" target="lib\netstandard2.0"/>
+  </files>
+</package>

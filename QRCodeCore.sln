@@ -7,16 +7,48 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QRCodeCore", "src\QRCodeCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QRCodeCore.Tests", "tests\QRCodeCore.Tests\QRCodeCore.Tests.csproj", "{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publish", "Publish", "{6E408898-DB1D-4105-B66F-97A1F41087F4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "publish", "publish", "{6E408898-DB1D-4105-B66F-97A1F41087F4}"
 	ProjectSection(SolutionItems) = preProject
-		publish\Publish.cmd = publish\Publish.cmd
-		publish\Push.cmd = publish\Push.cmd
+		publish\publish.yml = publish\publish.yml
+		publish\push.cmd = publish\push.cmd
+		publish\QRCodeCore.nuspec = publish\QRCodeCore.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B123FC4D-6795-49E5-9EB8-A71EC10E33D7}"
 	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
 		License.txt = License.txt
 		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0AB9314E-623E-48E7-B572-9F975F565C6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C0E004D0-5C05-46D7-9244-108891182FD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "linux", "linux", "{820693FF-3AE0-4D10-B228-3DD2DCDB5A2D}"
+	ProjectSection(SolutionItems) = preProject
+		build\linux\build.sh = build\linux\build.sh
+		build\linux\build.yml = build\linux\build.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{6B39B4B1-13E2-4C23-9AFF-E8F6DF2FA5C8}"
+	ProjectSection(SolutionItems) = preProject
+		build\windows\build.cmd = build\windows\build.cmd
+		build\windows\build.ps1 = build\windows\build.ps1
+		build\windows\build.yml = build\windows\build.yml
+		build\windows\init.visualstudio.cmd = build\windows\init.visualstudio.cmd
+		build\windows\install.dependencies.cmd = build\windows\install.dependencies.cmd
+		build\windows\install.dependencies.ps1 = build\windows\install.dependencies.ps1
+		build\windows\test.cmd = build\windows\test.cmd
+		build\windows\test.ps1 = build\windows\test.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "macos", "macos", "{C1459E36-F4C4-4032-8218-17A797E7FDE4}"
+	ProjectSection(SolutionItems) = preProject
+		build\macos\build.sh = build\macos\build.sh
+		build\macos\build.yml = build\macos\build.yml
 	EndProjectSection
 EndProject
 Global
@@ -36,6 +68,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E} = {0AB9314E-623E-48E7-B572-9F975F565C6A}
+		{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25} = {C0E004D0-5C05-46D7-9244-108891182FD6}
+		{820693FF-3AE0-4D10-B228-3DD2DCDB5A2D} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
+		{6B39B4B1-13E2-4C23-9AFF-E8F6DF2FA5C8} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
+		{C1459E36-F4C4-4032-8218-17A797E7FDE4} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1DB5300-B228-41ED-9BBB-06850E5BB9C0}
