@@ -36,13 +36,17 @@ namespace QRCodeCore
       svgFile.Append(viewBoxSize);
       svgFile.Append(@""" height=""");
       svgFile.Append(viewBoxSize);
-      svgFile.Append(@""" xmlns=""http://www.w3.org/2000/svg"">");
+      svgFile.AppendLine(@""" xmlns=""http://www.w3.org/2000/svg"">");
+      svgFile.AppendLine(@"<rect width=""100%"" height=""100%"" fill=""#fff""/>");
 
-      for (var x = 0; x < viewBoxSize; x += unitsPerModule)
+            for (var x = 0; x < viewBoxSize; x += unitsPerModule)
       {
         for (var y = 0; y < viewBoxSize; y += unitsPerModule)
         {
           var module = matrix.GetValue((y + unitsPerModule) / unitsPerModule - 1, (x + unitsPerModule) / unitsPerModule - 1);
+          if (!module)
+            continue;
+
           svgFile.Append(@"<rect x=""");
           svgFile.Append(x);
           svgFile.Append(@""" y=""");
@@ -51,9 +55,7 @@ namespace QRCodeCore
           svgFile.Append(unitsPerModule);
           svgFile.Append(@""" height=""");
           svgFile.Append(unitsPerModule);
-          svgFile.Append(@""" fill=""");
-          svgFile.Append(module ? "#000" : "#fff");
-          svgFile.AppendLine(@""" />");
+          svgFile.AppendLine(@""" fill=""000"" />");
         }
       }
 
