@@ -1,33 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net35;netstandard1.1</TargetFrameworks>
-    <DebugType Condition="$(codecov) != ''">full</DebugType>
-    <DebugType Condition="$(codecov) == ''">portable</DebugType>
+    <TargetFrameworks>net35;netstandard1.1;netstandard2.0</TargetFrameworks>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
     <Version>1.0.0</Version>
     <Description>A cross-platform .NET library to create QR Codes</Description>
-    <Copyright>Copyright 2016 Dirk Lemstra</Copyright>
-    <AssemblyTitle>QRCodeCore</AssemblyTitle>
+    <Copyright>Copyright 2016-2019 Dirk Lemstra</Copyright>
     <Authors>Dirk Lemstra</Authors>
-    <AssemblyName>QRCodeCore</AssemblyName>
-    <PackageId>QRCodeCore</PackageId>
     <PackageTags>qr qr-code</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/dlemstra/QRCodeCore/master/logo/QRCodeCore.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/dlemstra/QRCodeCore</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/dlemstra/QRCodeCore/blob/master/License.txt</PackageLicenseUrl>
-    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.1' ">1.6.0</NetStandardImplicitPackageVersion>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
   </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
-    <Reference Include="System" />
-  </ItemGroup>
 
 </Project>
