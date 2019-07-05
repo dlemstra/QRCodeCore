@@ -16,13 +16,11 @@
     <tags>qr qr-code</tags>
     <dependencies>
       <group targetFramework="net35"/>
-      <group targetFramework=".NETStandard1.1"/>
       <group targetFramework=".NETStandard2.0"/>
     </dependencies>
   </metadata>
   <files>
     <file src="..\src\QRCodeCore\bin\Release\net35\QRCodeCore.dll" target="lib\net35"/>
-    <file src="..\src\QRCodeCore\bin\Release\netstandard1.1\QRCodeCore.dll" target="lib\netstandard1.1"/>
     <file src="..\src\QRCodeCore\bin\Release\netstandard2.0\QRCodeCore.dll" target="lib\netstandard2.0"/>
   </files>
 </package>
