@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "publish", "publish", "{6E40
 	ProjectSection(SolutionItems) = preProject
 		publish\push.cmd = publish\push.cmd
 		publish\QRCodeCore.nuspec = publish\QRCodeCore.nuspec
+		publish\update.version.cmd = publish\update.version.cmd
+		publish\update.version.ps1 = publish\update.version.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B123FC4D-6795-49E5-9EB8-A71EC10E33D7}"
