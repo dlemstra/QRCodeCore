@@ -1,3 +1,3 @@
 @echo off
 
-powershell .\update.version.ps1 -version "1.0.0"
+powershell .\update.version.ps1 -version "2.0.0"
