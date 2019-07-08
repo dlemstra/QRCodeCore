@@ -39,6 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{6B39
 		build\windows\build.cmd = build\windows\build.cmd
 		build\windows\build.ps1 = build\windows\build.ps1
 		build\windows\build.yml = build\windows\build.yml
+		build\windows\check.tag.ps1 = build\windows\check.tag.ps1
 		build\windows\init.visualstudio.cmd = build\windows\init.visualstudio.cmd
 		build\windows\install.dependencies.cmd = build\windows\install.dependencies.cmd
 		build\windows\install.dependencies.ps1 = build\windows\install.dependencies.ps1
