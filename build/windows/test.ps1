@@ -1,4 +1,4 @@
-. $PSScriptRoot\utils.ps1
+. $PSScriptRoot\..\..\tools\utils.ps1
 
 function runTests($targetFramework)
 {

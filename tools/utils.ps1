@@ -1,6 +1,3 @@
-# Copyright (c) Carbon and contributors.
-# Licensed under the MIT License.
-
 function checkExitCode($msg)
 {
     if ($LastExitCode -ne 0)
@@ -12,5 +9,5 @@ function checkExitCode($msg)
 
 function fullPath($path)
 {
-    return "$PSScriptRoot\..\..\$path"
+    return "$PSScriptRoot\..\$path"
 }
