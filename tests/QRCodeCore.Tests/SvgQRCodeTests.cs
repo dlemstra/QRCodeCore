@@ -14,17 +14,17 @@ using Xunit;
 
 namespace QRCodeCore.Tests
 {
-  public class SvgQRCodeTests
-  {
-    [Fact]
-    public void Test_Create()
+    public class SvgQRCodeTests
     {
-      QRCodeData data = new QRCodeData("QRCodeCore");
+        [Fact]
+        public void Test_Create()
+        {
+            QRCodeData data = new QRCodeData("QRCodeCore");
 
-      SvgQRCode qrCode = new SvgQRCode(data);
-      string actual = qrCode.Create(128);
+            SvgQRCode qrCode = new SvgQRCode(data);
+            string actual = qrCode.Create(128);
 
-      string excepted = @"<svg version=""1.1"" baseProfile=""full"" width=""116"" height=""116"" xmlns=""http://www.w3.org/2000/svg"">
+            string excepted = @"<svg version=""1.1"" baseProfile=""full"" width=""116"" height=""116"" xmlns=""http://www.w3.org/2000/svg"">
 <rect width=""100%"" height=""100%"" fill=""#fff""/>
 <rect x=""16"" y=""16"" width=""4"" height=""4"" fill=""000"" />
 <rect x=""16"" y=""20"" width=""4"" height=""4"" fill=""000"" />
@@ -251,8 +251,8 @@ namespace QRCodeCore.Tests
 </svg>
 ".Replace("\r", "").Replace("\n", "");
 
-      actual = actual.Replace("\r", "").Replace("\n", "");
-      Assert.Equal(excepted, actual);
+            actual = actual.Replace("\r", "").Replace("\n", "");
+            Assert.Equal(excepted, actual);
+        }
     }
-  }
 }

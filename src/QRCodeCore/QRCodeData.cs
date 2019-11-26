@@ -12,24 +12,16 @@
 
 namespace QRCodeCore
 {
-  public sealed class QRCodeData
-  {
-    public QRCodeData(string text)
+    public sealed class QRCodeData
     {
-      Text = text;
-      EccLevel = EccLevel.Q;
-    }
+        public QRCodeData(string text)
+        {
+            Text = text;
+            EccLevel = EccLevel.Q;
+        }
 
-    public EccLevel EccLevel
-    {
-      get;
-      set;
-    }
+        public EccLevel EccLevel { get; set; }
 
-    internal string Text
-    {
-      get;
-      private set;
+        internal string Text { get; }
     }
-  }
 }

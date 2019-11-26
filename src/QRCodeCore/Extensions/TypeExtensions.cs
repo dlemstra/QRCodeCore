@@ -16,15 +16,8 @@ using System.Reflection;
 
 namespace QRCodeCore
 {
-  internal static class TypeExtensions
-  {
-    public static IEnumerable<MethodInfo> DeclaredMethods(this Type self)
+    internal static class TypeExtensions
     {
-#if NETSTANDARD1_1
-      return self.GetTypeInfo().DeclaredMethods;
-#else
-      return self.GetMethods();
-#endif
+        public static IEnumerable<MethodInfo> DeclaredMethods(this Type self) => self.GetMethods();
     }
-  }
 }
