@@ -17,7 +17,7 @@ namespace QRCodeCore
 {
     public sealed class SvgQRCode
     {
-        private QRCodeData _Data;
+        private readonly QRCodeData _Data;
 
         public SvgQRCode(QRCodeData data)
         {
