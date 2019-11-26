@@ -1,4 +1,4 @@
-﻿// Copyright 2016-2018 Dirk Lemstra <https://github.com/dlemstra/QRCodeCore>
+﻿// Copyright 2016-2019 Dirk Lemstra <https://github.com/dlemstra/QRCodeCore>
 //
 // Licensed under the Apache 2.0 License (the "License"); you may not use this file except in 
 // compliance with the License. You may obtain a copy of the License at
