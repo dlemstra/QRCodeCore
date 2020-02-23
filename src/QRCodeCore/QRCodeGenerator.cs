@@ -458,6 +458,22 @@ namespace QRCodeCore
 
             private static class MaskPattern
             {
+                public static bool Pattern1(int x, int y) => (x + y) % 2 == 0;
+
+                public static bool Pattern2(int x, int y) => y % 2 == 0;
+
+                public static bool Pattern3(int x, int y) => x % 3 == 0;
+
+                public static bool Pattern4(int x, int y) => (x + y) % 3 == 0;
+
+                public static bool Pattern5(int x, int y) => ((int)(Math.Floor(y / 2d) + Math.Floor(x / 3d)) % 2) == 0;
+
+                public static bool Pattern6(int x, int y) => ((x * y) % 2) + ((x * y) % 3) == 0;
+
+                public static bool Pattern7(int x, int y) => (((x * y) % 2) + ((x * y) % 3)) % 2 == 0;
+
+                public static bool Pattern8(int x, int y) => (((x + y) % 2) + ((x * y) % 3)) % 2 == 0;
+
                 public static int Score(ref QRCodeMatrix qrCode)
                 {
                     var score1 = 0;
