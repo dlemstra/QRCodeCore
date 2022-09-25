@@ -23,10 +23,10 @@ jobs:
         fetch-depth: 1
 
     - name: Build
-      run: dotnet build QRCodeCore.Tests.csproj -f netcoreapp2.0 -c Release
+      run: dotnet build -c Release
 
     - name: Test
-      run: dotnet test QRCodeCore.Tests.csproj -f netcoreapp2.0 -c Release
+      run: dotnet test -c Release
 
   macos:
     name: 'MacOS'
@@ -40,7 +40,7 @@ jobs:
         fetch-depth: 1
 
     - name: Build
-      run: dotnet build QRCodeCore.Tests.csproj -f netcoreapp2.0 -c Release
+      run: dotnet build -c Release
 
     - name: Test
-      run: dotnet test QRCodeCore.Tests.csproj -f netcoreapp2.0 -c Release
+      run: dotnet test -c Release
