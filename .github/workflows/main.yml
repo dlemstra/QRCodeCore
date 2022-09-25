@@ -1,0 +1,46 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+name: main
+jobs:
+
+  linux:
+    name: 'Linux'
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:6.0
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
+
+    - name: Build
+      run: dotnet build QRCodeCore.Tests.csproj -f netcoreapp2.0 -c Release
+
+    - name: Test
+      run: dotnet test QRCodeCore.Tests.csproj -f netcoreapp2.0 -c Release
+
+  macos:
+    name: 'MacOS'
+    runs-on: macos-11
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
+
+    - name: Build
+      run: dotnet build QRCodeCore.Tests.csproj -f netcoreapp2.0 -c Release
+
+    - name: Test
+      run: dotnet test QRCodeCore.Tests.csproj -f netcoreapp2.0 -c Release

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QRCodeCore", "src\QRCodeCore\QRCodeCore.csproj", "{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E}"
 EndProject
@@ -17,7 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "publish", "publish", "{6E40
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B123FC4D-6795-49E5-9EB8-A71EC10E33D7}"
 	ProjectSection(SolutionItems) = preProject
-		azure-pipelines.yml = azure-pipelines.yml
 		License.txt = License.txt
 		Readme.md = Readme.md
 	EndProjectSection
@@ -58,6 +57,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{97317F88
 		tools\utils.ps1 = tools\utils.ps1
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{1B0C373F-4F30-4827-9CBB-2B426D9F6FCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{190BB39E-0AC6-41E4-98EA-080CC07E02F7}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main.yml = .github\workflows\main.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +88,7 @@ Global
 		{820693FF-3AE0-4D10-B228-3DD2DCDB5A2D} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
 		{6B39B4B1-13E2-4C23-9AFF-E8F6DF2FA5C8} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
 		{C1459E36-F4C4-4032-8218-17A797E7FDE4} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
+		{190BB39E-0AC6-41E4-98EA-080CC07E02F7} = {1B0C373F-4F30-4827-9CBB-2B426D9F6FCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1DB5300-B228-41ED-9BBB-06850E5BB9C0}
