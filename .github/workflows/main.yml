@@ -24,9 +24,11 @@ jobs:
 
     - name: Build
       run: dotnet build -f net6 -c Release
+      working-directory: tests/QRCodeCore.Tests
 
     - name: Test
       run: dotnet test -f net6 -c Release
+      working-directory: tests/QRCodeCore.Tests
 
   macos:
     name: 'MacOS'
@@ -41,6 +43,8 @@ jobs:
 
     - name: Build
       run: dotnet build -f net6 -c Release
+      working-directory: tests/QRCodeCore.Tests
 
     - name: Test
       run: dotnet test -f net6 -c Release
+      working-directory: tests/QRCodeCore.Tests
