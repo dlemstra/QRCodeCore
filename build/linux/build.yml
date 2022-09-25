@@ -1,5 +1,0 @@
-steps:
-
-- script: $(Build.SourcesDirectory)/build/linux/build.sh
-  workingDirectory: $(Build.SourcesDirectory)/tests/QRCodeCore.Tests
-  displayName: Build and test QRCodeCore

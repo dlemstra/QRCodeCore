@@ -27,12 +27,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C0E004D0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "linux", "linux", "{820693FF-3AE0-4D10-B228-3DD2DCDB5A2D}"
-	ProjectSection(SolutionItems) = preProject
-		build\linux\build.sh = build\linux\build.sh
-		build\linux\build.yml = build\linux\build.yml
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{6B39B4B1-13E2-4C23-9AFF-E8F6DF2FA5C8}"
 	ProjectSection(SolutionItems) = preProject
 		build\windows\build.cmd = build\windows\build.cmd
@@ -44,12 +38,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{6B39
 		build\windows\install.dependencies.ps1 = build\windows\install.dependencies.ps1
 		build\windows\test.cmd = build\windows\test.cmd
 		build\windows\test.ps1 = build\windows\test.ps1
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "macos", "macos", "{C1459E36-F4C4-4032-8218-17A797E7FDE4}"
-	ProjectSection(SolutionItems) = preProject
-		build\macos\build.sh = build\macos\build.sh
-		build\macos\build.yml = build\macos\build.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{97317F88-C115-4CA4-8280-821EEF100343}"
@@ -85,9 +73,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C34F02DE-7B76-4BBE-9879-2AC2BD92B84E} = {0AB9314E-623E-48E7-B572-9F975F565C6A}
 		{7C6BE2EE-86A8-44C5-A737-FF09C8B28F25} = {C0E004D0-5C05-46D7-9244-108891182FD6}
-		{820693FF-3AE0-4D10-B228-3DD2DCDB5A2D} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
 		{6B39B4B1-13E2-4C23-9AFF-E8F6DF2FA5C8} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
-		{C1459E36-F4C4-4032-8218-17A797E7FDE4} = {9F3A4EF8-0813-423A-A21A-1B1054DE0F1B}
 		{190BB39E-0AC6-41E4-98EA-080CC07E02F7} = {1B0C373F-4F30-4827-9CBB-2B426D9F6FCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
