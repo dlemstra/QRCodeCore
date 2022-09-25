@@ -1,14 +1,5 @@
-﻿// Copyright 2016-2019 Dirk Lemstra <https://github.com/dlemstra/QRCodeCore>
-//
-// Licensed under the Apache 2.0 License (the "License"); you may not use this file except in 
-// compliance with the License. You may obtain a copy of the License at
-//
-//   https://github.com/dlemstra/QRCodeCore/blob/master/License.txt
-//
-// Unless required by applicable law or agreed to in writing, software distributed under the
-// License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-// express or implied. See the License for the specific language governing permissions and
-// limitations under the License.
+﻿// Copyright Dirk Lemstra https://github.com/dlemstra/QRCodeCore.
+// Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Text;
@@ -17,17 +8,17 @@ namespace QRCodeCore
 {
     public sealed class SvgQRCode
     {
-        private readonly QRCodeData _Data;
+        private readonly QRCodeData _data;
 
         public SvgQRCode(QRCodeData data)
         {
-            _Data = data;
+            _data = data;
         }
 
         public string Create(int size)
         {
-            QRCodeGenerator generator = new QRCodeGenerator();
-            QRCodeMatrix matrix = generator.CreateQRCode(_Data.Text, _Data.EccLevel);
+            var generator = new QRCodeGenerator();
+            var matrix = generator.CreateQRCode(_data.Text, _data.EccLevel);
 
             var unitsPerModule = (int)Math.Floor(size / (double)matrix.ModuleMatrix.Count);
             var viewBoxSize = matrix.ModuleMatrix.Count * unitsPerModule;
@@ -43,7 +34,7 @@ namespace QRCodeCore
             {
                 for (var y = 0; y < viewBoxSize; y += unitsPerModule)
                 {
-                    var module = matrix.GetValue((y + unitsPerModule) / unitsPerModule - 1, (x + unitsPerModule) / unitsPerModule - 1);
+                    var module = matrix.GetValue(((y + unitsPerModule) / unitsPerModule) - 1, ((x + unitsPerModule) / unitsPerModule) - 1);
                     if (!module)
                         continue;
 
