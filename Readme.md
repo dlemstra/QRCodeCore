@@ -1,6 +1,6 @@
 # QRCodeCore
 
-[![Build Status](https://dev.azure.com/dlemstra/QRCodeCore/_apis/build/status/dlemstra.QRCodeCore?branchName=master)](https://dev.azure.com/dlemstra/QRCodeCore/_build/latest?definitionId=22&branchName=master)
+[![Build Status](https://github.com/dlemstra/QRCodeCore/workflows/main/badge.svg)](https://github.com/dlemstra/QRCodeCore/actions)
 
 QRCodeCore is a cross-platform .NET library to create QR Codes that works in .NET Framework 3.5 and Netstandard 2.0. 
 
