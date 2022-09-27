@@ -1,14 +1,5 @@
-﻿// Copyright 2016-2018 Dirk Lemstra <https://github.com/dlemstra/QRCodeCore>
-//
-// Licensed under the Apache 2.0 License (the ""License""); you may not use this file except in 
-// compliance with the License. You may obtain a copy of the License at
-//
-//   https://github.com/dlemstra/QRCodeCore/blob/master/License.txt
-//
-// Unless required by applicable law or agreed to in writing, software distributed under the
-// License is distributed on an ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-// express or implied. See the License for the specific language governing permissions and
-// limitations under the License.
+﻿// Copyright Dirk Lemstra https://github.com/dlemstra/QRCodeCore.
+// Licensed under the Apache License, Version 2.0.
 
 using Xunit;
 
@@ -19,12 +10,12 @@ namespace QRCodeCore.Tests
         [Fact]
         public void Test_Create()
         {
-            QRCodeData data = new QRCodeData("QRCodeCore");
+            var data = new QRCodeData("QRCodeCore");
 
-            SvgQRCode qrCode = new SvgQRCode(data);
-            string actual = qrCode.Create(128);
+            var qrCode = new SvgQRCode(data);
+            var actual = qrCode.Create(128);
 
-            string excepted = @"<svg version=""1.1"" baseProfile=""full"" width=""116"" height=""116"" xmlns=""http://www.w3.org/2000/svg"">
+            var excepted = @"<svg version=""1.1"" baseProfile=""full"" width=""116"" height=""116"" xmlns=""http://www.w3.org/2000/svg"">
 <rect width=""100%"" height=""100%"" fill=""#fff""/>
 <rect x=""16"" y=""16"" width=""4"" height=""4"" fill=""000"" />
 <rect x=""16"" y=""20"" width=""4"" height=""4"" fill=""000"" />
@@ -249,9 +240,9 @@ namespace QRCodeCore.Tests
 <rect x=""96"" y=""76"" width=""4"" height=""4"" fill=""000"" />
 <rect x=""96"" y=""80"" width=""4"" height=""4"" fill=""000"" />
 </svg>
-".Replace("\r", "").Replace("\n", "");
+".Replace("\r", string.Empty).Replace("\n", string.Empty);
 
-            actual = actual.Replace("\r", "").Replace("\n", "");
+            actual = actual.Replace("\r", string.Empty).Replace("\n", string.Empty);
             Assert.Equal(excepted, actual);
         }
     }
