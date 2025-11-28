@@ -16,7 +16,7 @@ jobs:
     name: Linux
     runs-on: ubuntu-24.04
     container:
-      image: mcr.microsoft.com/dotnet/sdk:6.0
+      image: mcr.microsoft.com/dotnet/sdk:8.0
 
     steps:
       - name: Checkout
