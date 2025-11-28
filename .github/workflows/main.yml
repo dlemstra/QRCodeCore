@@ -25,11 +25,11 @@ jobs:
           persist-credentials: false
 
       - name: Build
-        run: dotnet build -f net6 -c Release
+        run: dotnet build -f net8.0 -c Release
         working-directory: tests/QRCodeCore.Tests
 
       - name: Test
-        run: dotnet test -f net6 -c Release
+        run: dotnet test -f net8.0 -c Release
         working-directory: tests/QRCodeCore.Tests
 
   macos:
@@ -43,11 +43,11 @@ jobs:
           persist-credentials: false
 
       - name: Build
-        run: dotnet build -f net6 -c Release
+        run: dotnet build -f net8.0 -c Release
         working-directory: tests/QRCodeCore.Tests
 
       - name: Test
-        run: dotnet test -f net6 -c Release
+        run: dotnet test -f net8.0 -c Release
         working-directory: tests/QRCodeCore.Tests
 
   windows:
