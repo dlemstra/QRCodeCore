@@ -15,9 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "publish", "publish", "{6E40
 		publish\update.version.ps1 = publish\update.version.ps1
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B123FC4D-6795-49E5-9EB8-A71EC10E33D7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{B123FC4D-6795-49E5-9EB8-A71EC10E33D7}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Directory.Packages.props = Directory.Packages.props
 		License.txt = License.txt
 		Readme.md = Readme.md
 	EndProjectSection
